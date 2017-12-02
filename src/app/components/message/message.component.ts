@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'message',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
     styleUrls: ['./message.component.css']
 })
 export class MessageComponent {
-  title = 'app works!';
+
+    @Input('text') text: string; 
+    @Input('date') date: any;
+    @Input('owner') owner: boolean;
+    @Input('colorBackRight') colorBackRight : string;
+    @Input('colorFontRight') colorFontRight: string;
+    @Input('colorBackLeft') colorBackLeft: string;
+    @Input('colorFontLeft') colorFontLeft: string;
+
+    
 }
