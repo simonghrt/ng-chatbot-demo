@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ChatService } from '../../services/chat/chat.service';
 
 @Component({
   selector: 'chat',
@@ -6,6 +7,8 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./chat.component.css']
 })
 export class ChatComponent {
+
+    BACK_ENABLED: boolean = true;
 
     @Input('messages') messages: any[];
     @Input('colorBackRight') colorBackRight : string;
@@ -15,7 +18,7 @@ export class ChatComponent {
 
     textInput: string = '';
 
-    constructor() {}
+    constructor(private chatService: ChatService) {}
 
     ngOnInit() {
       // this.colorBackRight ? this.colorBackRight : '#007bff';
@@ -27,6 +30,14 @@ export class ChatComponent {
     sendMessage() {
       let newMessage = {"text": this.textInput, "date":"", "userOwner":true};
       this.messages.push(newMessage);
+      let messageBack = {"firstname": "Simon", "text": this.textInput};
+      if (this.BACK_ENABLED) {
+          this.chatService.sendMessage(messageBack).then(
+              (res) => {
+                  let messageReturn = {"text": res.json().speech_answer, "date": "", "userOwner": false};
+                  this.messages.push(messageReturn);
+              });
+      }
       this.textInput = '';
     }
 

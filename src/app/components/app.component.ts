@@ -10,9 +10,10 @@ export class AppComponent {
     colorFontRight: string = '#ffffff';
     colorBackLeft: string = '#eeeeee';
     colorFontLeft: string = '#343a40';
-    messages = [
+    /*messages = [
         {"text": "Hello", "date":"", "userOwner":true},
         {"text": "Hello again", "date":"", "userOwner": false},
         {"text": "How are you ?How are you ?How are you ?How are you ?How are you ?How are you ?How are you ?How are you ?", "date":"", "userOwner": true}
-    ];
+    ];*/
+    messages = [];
 }
