@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -13,8 +13,11 @@ import { MessageComponent } from './components/message/message.component';
       MessageComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     FormsModule,
+  ],
+  exports: [
+    ChatComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
