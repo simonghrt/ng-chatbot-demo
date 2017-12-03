@@ -1,4 +1,6 @@
-# NgxChatSimple
+# NgChatbotDemo
+
+It is a simple project used as a demo to illustrate how to create an Angular project.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-beta.32.3.
 
